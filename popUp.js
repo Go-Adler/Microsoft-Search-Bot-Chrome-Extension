@@ -3,14 +3,18 @@
 document.addEventListener('DOMContentLoaded', function () {
   const startButton = document.querySelector('#startt');
   const stopButton = document.querySelector('#sttop');
+  const countArea = document.querySelector('#count');
+
   let stopExecution = false;
-  
+  let count = 0
   const startFn = () => {
     stopExecution = false;
     let iteration = 0;
   
     const loop = () => {
-      if (iteration < 30 && !stopExecution) {
+      if (iteration < 150 && !stopExecution) {
+        count++
+        countArea.innerHTML = `${count}/150`
         callF()
         console.log('worked');
   
